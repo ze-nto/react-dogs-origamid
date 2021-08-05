@@ -1,6 +1,6 @@
 .photo{
     margin: auto;
-    height: 32rem;
+    height: 36rem;
     border-radius: .2rem;
     background: #fff;
     display: grid;
@@ -13,39 +13,37 @@
 }
 
 @keyframes scaleUp {
-    to{
+    to {
         opacity: initial;
         transform: initial;
     }
 }
 
-
-
-.details{
+.details {
     padding: 2rem 2rem 0 2rem;
 }
 
-img{
+.img {
     grid-row: 1/4;
 }
 
-.comments{
+.comments {
     padding: 0 2rem;
 }
 
-@media (max-width: 64rem){
-    .photo{
+@media (max-width: 64rem) {
+    .photo {
         height: auto;
         max-height: calc(100vh - 4rem);
         overflow-y: auto;
         grid-template-columns: minmax(20rem, 40rem);
     }
-    .img{
+    .img {
         grid-row: 1;
     }
 }
 
-.author{
+.author {
     opacity: .5;
     margin-bottom: 1rem;
     display: flex;
@@ -53,12 +51,12 @@ img{
     align-items: center;
 }
 
-.author a {
+.author a:hover {
     text-decoration: underline;
 
 }
 
-.visualizacoes::before{
+.visualizacoes::before {
     content: '';
     display: inline-block;
     width: 16px;

@@ -4,16 +4,17 @@ import styles from './PhotoContent.module.css';
 import PhotoComments from './PhotoComments';
 import { UserContext } from '../../UserContext';
 import PhotoDelete from './PhotoDelete';
+import Image from '../Helper/Image';
 
-const PhotoContent = ({data}) => {
+const PhotoContent = ({data, single}) => {
     
     const { photo, comments } = data;
     const user = useContext(UserContext);
 
     return (
-        <div className={styles.photo}>
+        <div className={`${styles.photo} ${single? styles.single : ''}`}>
             <div className={styles.img}>
-                <img src={photo.src} alt={photo.title} />
+                <Image src={photo.src} alt={photo.title}/>
             </div>
             <div className={styles.details}>
                 <p className={styles.author}>
@@ -29,7 +30,7 @@ const PhotoContent = ({data}) => {
                     <li>{photo.idade} {photo.idade === 1? 'ano' : 'anos'}</li>
                 </ul>
             </div>
-            <PhotoComments id={photo.id} comments={comments} />
+            <PhotoComments single={single} id={photo.id} comments={comments} />
         </div>
     )
 }

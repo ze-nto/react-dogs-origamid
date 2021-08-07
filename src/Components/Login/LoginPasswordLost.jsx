@@ -19,12 +19,12 @@ const LoginPasswordLost = () => {
             const { url, options } = PASSWORD_LOST({
                 login: login.value, 
                 url: window.location.href.replace('perdeu', 'resetar')});
-            const {json} = await request(url, options);
+            await request(url, options);
         }
     }
 
     return (
-        <section>
+        <section className="animeLeft">
             <Head title="Perdeu a senha?" />
             <h1 className="title">Perdeu a senha?</h1>
             {data ? 
